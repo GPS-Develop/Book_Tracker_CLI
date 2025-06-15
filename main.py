@@ -1,7 +1,6 @@
 import book  # this is your book.py file
 
 books = book.load_books()
-
 while True:
     print("\nPress 1 to add a book")
     print("Press 2 to view books")
@@ -12,7 +11,7 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        book.add_book(books)
+        book.add_book(books)   
     elif choice == "2":
         book.print_books(books)
     elif choice == "3":
@@ -23,3 +22,4 @@ while True:
         break
     else:
         print("Invalid choice. Try again.")
+        

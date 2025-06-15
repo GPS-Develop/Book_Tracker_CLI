@@ -28,6 +28,9 @@ def add_book(books):
     save_books(books)
     print("Book added and saved successfully!")
 
+def get_book_titles(books):
+    return [book["title"] for book in books]
+
 def print_books(books):
     for book in books:
         print(f'{book["title"]} by {book["author"]} - {book["pages"]} pages')
