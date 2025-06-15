@@ -9,6 +9,11 @@ class TestBookTitles(unittest.TestCase):
         ]
         result = get_book_titles(books)
         self.assertEqual(result,  ["test1", "test2"])
+
+    def test_returns_empty_list_when_no_books(self):
+        books = []
+        result = get_book_titles(books)
+        self.assertEqual(result, [])
         
 if __name__ == "__main__":
     unittest.main()
