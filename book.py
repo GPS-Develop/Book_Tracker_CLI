@@ -21,11 +21,7 @@ def add_book(books):
         print("Title and Author cannot be empty.")
         return
 
-    try:
-        pages = int(input("Enter # of pages: "))
-    except ValueError:
-        print("Pages must be a number.")
-        return
+    pages = get_valid_int("Enter # of pages: ")
 
     new_book = {
         "title": title,
@@ -58,3 +54,13 @@ def delete_book_by_title(books):
             print(f'Book "{title}" has been deleted.')
             return
     print("Book not found.")
+
+def get_valid_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a valid number. ")
+
+
+        
