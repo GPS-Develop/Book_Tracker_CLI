@@ -14,15 +14,10 @@ def save_books(books):
         json.dump(books, f)
 
 def add_book(books):
-    title = input("Enter Title: ")
-    author = input("Enter Author: ")
-
-    if title.strip() == "" or author.strip() == "":
-        print("Title and Author cannot be empty.")
-        return
-
+    title = get_nonempty_string("Enter Title: ")
+    author = get_nonempty_string("Enter Author: ")
     pages = get_valid_int("Enter # of pages: ")
-
+    
     new_book = {
         "title": title,
         "author": author,
@@ -62,5 +57,11 @@ def get_valid_int(prompt):
         except ValueError:
             print("Please enter a valid number. ")
 
+def get_nonempty_string(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print("Input cannot be empty. ")
 
         
